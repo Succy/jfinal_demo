@@ -1,12 +1,15 @@
 package cn.succy.jfinal.common;
 
+import cn.succy.jfinal.blog.BlogController;
 import cn.succy.jfinal.common.model._MappingKit;
+import cn.succy.jfinal.index.IndexController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
 import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
+import com.jfinal.core.JFinal;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
@@ -18,6 +21,11 @@ import com.jfinal.template.Engine;
  **/
 
 public class DemoConfig extends JFinalConfig {
+
+    public static void main(String[] args) {
+        JFinal.start("src/main/webapp", 80, "/");
+    }
+
     @Override
     public void configConstant(Constants constants) {
         PropKit.use("config.properties");
@@ -26,12 +34,14 @@ public class DemoConfig extends JFinalConfig {
 
     @Override
     public void configRoute(Routes routes) {
-
+        routes.add("/", IndexController.class, "/index");
+        routes.add("/blog", BlogController.class);
     }
 
     @Override
     public void configEngine(Engine engine) {
-
+        engine.addSharedFunction("/common/_layout.html");
+        engine.addSharedFunction("/common/_paginate.html");
     }
 
     @Override

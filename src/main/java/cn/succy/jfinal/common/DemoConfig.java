@@ -9,7 +9,6 @@ import com.jfinal.config.Interceptors;
 import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
-import com.jfinal.core.JFinal;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
@@ -22,9 +21,9 @@ import com.jfinal.template.Engine;
 
 public class DemoConfig extends JFinalConfig {
 
-    public static void main(String[] args) {
-        JFinal.start("src/main/webapp", 80, "/");
-    }
+    // public static void main(String[] args) {
+    //     JFinal.start("src/main/webapp", 80, "/");
+    // }
 
     @Override
     public void configConstant(Constants constants) {

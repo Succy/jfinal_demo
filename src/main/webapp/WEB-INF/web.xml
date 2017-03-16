@@ -16,4 +16,13 @@
         <filter-name>jfinal</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!--<servlet>-->
+        <!--<servlet-name>websocket</servlet-name>-->
+        <!--<servlet-class>cn.succy.jfinal.controller.WebSocketController</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>websocket</servlet-name>-->
+        <!--<url-pattern>/websoket.ws</url-pattern>-->
+    <!--</servlet-mapping>-->
 </web-app>

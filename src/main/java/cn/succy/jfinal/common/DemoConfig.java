@@ -2,6 +2,7 @@ package cn.succy.jfinal.common;
 
 import cn.succy.jfinal.blog.BlogController;
 import cn.succy.jfinal.common.model._MappingKit;
+import cn.succy.jfinal.handler.WebSocketHandler;
 import cn.succy.jfinal.index.IndexController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -24,6 +25,7 @@ public class DemoConfig extends JFinalConfig {
     // public static void main(String[] args) {
     //     JFinal.start("src/main/webapp", 80, "/");
     // }
+
 
     @Override
     public void configConstant(Constants constants) {
@@ -61,7 +63,7 @@ public class DemoConfig extends JFinalConfig {
 
     @Override
     public void configHandler(Handlers handlers) {
-
+        //handlers.add(new WebSocketHandler("^/websocket"));
     }
 
     public static DruidPlugin createDruidPlugin() {
